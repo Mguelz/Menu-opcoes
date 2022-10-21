@@ -24,11 +24,9 @@ public class Jokenpo {
 			case 1:
 				System.out.println("\nJogador escolheu Pedra");
 				break;
-
 			case 2:
 				System.out.println("\nJogador escolheu Papel");
 				break;
-
 			case 3:
 				System.out.println("\nJogador escolheu Tesoura");
 				break;
@@ -36,16 +34,17 @@ public class Jokenpo {
 				System.out.println("\nOpção Inválida");
 			}
 			// computador
-			computador = random.nextInt(2) + 1;
+			computador = random.nextInt(3) + 1;
+			if (computador == 4) {
+				computador = 3;
+			}
 			switch (computador) {
 			case 1:
 				System.out.println("Computador escolheu Pedra");
 				break;
-
 			case 2:
 				System.out.println("Computador escolheu Papel");
 				break;
-
 			case 3:
 				System.out.println("Computador escolheu Tesoura");
 				break;
@@ -53,11 +52,10 @@ public class Jokenpo {
 			// processamento
 			if (jogador == computador) {
 				System.out.println("\n         EMPATE");
-			} else if ((jogador == 1 && computador == 3) || (jogador == 2 && computador == 1)
-					|| (jogador == 3 && computador == 2)) {
+			} else if ((jogador == 1 && computador == 3) || (jogador == 2 && computador == 1) || (jogador == 3 && computador == 2)) {
 				System.out.println("\n      Você Venceu!");
 			} else {
-				System.out.println("\n    O computador Venceu");
+				System.out.println("\n      Você Perdeu!");
 			}
 
 			System.out.println("Deseja continuar jogando? \n1 - Sim ou 2 - Não");
