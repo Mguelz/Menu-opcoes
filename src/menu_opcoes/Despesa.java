@@ -12,22 +12,18 @@ public class Despesa {
 		do {
 			System.out.println("qual a sua renda neste mes: ");
 			rendaMes = scanner.nextDouble();
-
 			System.out.println("quantidade gasto em DINHEIRO: ");
 			tudoEmDinheiro = scanner.nextDouble();
 			System.out.println("quantidade gasto em CARTÃO: ");
 			tudoEmCartao = scanner.nextDouble();
 			System.out.println("");
 
-			// processamento
 			totalDespesas = tudoEmDinheiro + tudoEmCartao;
-
 			System.out.println("Total de despesas");
 			System.out.println(totalDespesas + " \n");
 
 			restante = rendaMes - totalDespesas;
 
-			// saida
 			if (totalDespesas > rendaMes) {
 				System.out.println("Fazer empréstimo no banco \nVoce ficou com: R$" + restante);
 			} else if (restante == 0) {

@@ -10,22 +10,19 @@ public class NumeroSorte {
 		int digitado, tentativa = 0, opcao;
 		boolean repetir = false;
 
-		objetivoJogo();
+		objetivoJogo(); // descrevendo como funciona este mini game
 		do {
 			for (int continuar = 1; continuar <= 3; continuar++) {
 				System.out.println("Tentativa " + (tentativa + 1));
 				tentativa++;
 				System.out.println("Digite um número entre 1 e 10: ");
 				digitado = scanner.nextInt();
-
 				int sorteio = random.nextInt(10) + 1;
-
 				if (digitado == sorteio) {
 					System.out.println("Você Acertou!, Parabéns ");
 					continuar = 3;
 				} else {
 					System.out.println("Você Errou, o número certo era: " + sorteio);
-
 				}
 				System.out.println("------------------------------");
 			}

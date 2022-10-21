@@ -20,7 +20,6 @@ public class RegraTres {
 			porcentagem = scanner.nextDouble();
 
 			valor = (porcentagem * total) / 100;
-
 			System.out.println("\n" + porcentagem + "% de " + total + " = " + formatador.format(valor) + " \n");
 
 			System.out.println("Deseja fazer outra conta? \n1 - SIM ou 2 - NÂO");

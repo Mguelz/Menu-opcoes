@@ -10,7 +10,6 @@ public class Tabuada {
 		do {
 			System.out.println("Qual a tabuada que você deseja: ");
 			tabuada = scanner.nextInt();
-
 			int i = 0;
 			do {
 				System.out.println(tabuada + " x " + i + " = " + (tabuada * i));
@@ -24,7 +23,6 @@ public class Tabuada {
 			} else {
 				continuar = 1;
 			}
-
 		} while (continuar == 0);
 	}
 }

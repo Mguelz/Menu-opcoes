@@ -14,11 +14,8 @@ public class IMC {
 			System.out.println("Qual sua altura");
 			altura = scanner.nextDouble();
 
-			// processamento
 			imc = massa / (altura * altura);
 			System.out.print("Seu IMC é: " + imc + "\n");
-
-			// saida
 			if (imc < 18.5) {
 				System.out.print("Seu índice é: Magreza");
 			} else if (imc >= 18.5 && imc < 24.9) {

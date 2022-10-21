@@ -7,7 +7,6 @@ public class Jokenpo {
 	public static void jokenpo() {
 		Scanner scanner = new Scanner(System.in);
 		Random random = new Random();
-
 		int jogador, computador;
 		boolean continuar = false;
 
@@ -18,8 +17,6 @@ public class Jokenpo {
 			System.out.println("3. Tesoura");
 			System.out.print("Digite a opção desejada: ");
 			jogador = scanner.nextInt();
-
-			// jogador
 			switch (jogador) {
 			case 1:
 				System.out.println("\nJogador escolheu Pedra");
@@ -33,8 +30,8 @@ public class Jokenpo {
 			default:
 				System.out.println("\nOpção Inválida");
 			}
-			// computador
-			computador = random.nextInt(3) + 1;
+			
+			computador = random.nextInt(3) + 1; // computador
 			if (computador == 4) {
 				computador = 3;
 			}
@@ -49,7 +46,7 @@ public class Jokenpo {
 				System.out.println("Computador escolheu Tesoura");
 				break;
 			}
-			// processamento
+			
 			if (jogador == computador) {
 				System.out.println("\n         EMPATE");
 			} else if ((jogador == 1 && computador == 3) || (jogador == 2 && computador == 1) || (jogador == 3 && computador == 2)) {
@@ -57,7 +54,6 @@ public class Jokenpo {
 			} else {
 				System.out.println("\n      Você Perdeu!");
 			}
-
 			System.out.println("Deseja continuar jogando? \n1 - Sim ou 2 - Não");
 			jogador = scanner.nextInt();
 			if (jogador == 1) {
@@ -65,7 +61,6 @@ public class Jokenpo {
 			} else {
 				continuar = false;
 			}
-
 		} while (continuar);
 
 		System.out.println("\n_________JoKenPô_________");

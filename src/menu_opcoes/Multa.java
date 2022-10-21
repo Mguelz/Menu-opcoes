@@ -13,12 +13,10 @@ public class Multa {
 			do {
 				System.out.println("Quantos pontos na CNH você recebeu?");
 				pontosCNH = scanner.nextByte();
-
 				if (pontosCNH == 3) {
 					System.out.println("Infração Leve ");
 					System.out.println("R$ 88,38 de multa");
 					continuar = false;
-
 				} else if (pontosCNH == 4) {
 					System.out.println("Infração Média");
 					System.out.println("R$ 130,16 de multa");

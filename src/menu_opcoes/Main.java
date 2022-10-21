@@ -6,15 +6,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Opcoes opcoes = new Opcoes();
-
 		byte opcaoEscolha;
 		boolean continuar = true;
 
 		do {
-			opcoes.escolherOpcoes();
+			Opcoes.escolherOpcoes();
 			opcaoEscolha = scanner.nextByte();
-
 			switch (opcaoEscolha) {
 			case 1:
 				IMC.imc();
@@ -61,7 +58,6 @@ public class Main {
 				break;
 			}
 		} while (continuar);
-
 		scanner.close();
 
 	}

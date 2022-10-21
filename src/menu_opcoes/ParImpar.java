@@ -17,7 +17,6 @@ public class ParImpar {
 
 			sorteio = random.nextInt(11);
 			imparPar = sorteio % 2;
-
 			if (digitado == 0) {
 				System.out.println("Você escolheu: par");
 				System.out.println("A máquina escolheu: impar");
