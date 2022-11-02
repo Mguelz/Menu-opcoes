@@ -2,7 +2,7 @@ package menu_opcoes;
 
 import java.util.Scanner;
 
-public class Multa {
+public class MultaSimples {
 	public static void multa() {
 		Scanner scanner = new Scanner(System.in);
 		byte pontosCNH = 0;

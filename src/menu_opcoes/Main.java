@@ -26,31 +26,35 @@ public class Main {
 				Opcoes.linhaFinal();
 				break;
 			case 4:
-				Multa.multa();
+				MultaSimples.multa();
 				Opcoes.linhaFinal();
 				break;
 			case 5:
-				NumeroSorte.numeroSorte();
+				MultaAvancado.multaAvancado();
+				Opcoes.linhaFinal();
 				break;
 			case 6:
+				NumeroSorte.numeroSorte();
+				break;
+			case 7:
 				Frete.frete();
 				Opcoes.linhaFinal();
 				break;
-			case 7:
+			case 8:
 				ParImpar.parImpar();
 				Opcoes.linhaFinal();
 				break;
-			case 8:
+			case 9:
 				Jokenpo.jokenpo();
+				break;
+			case 10:
+				RegraTres.regraDeTres();
+				Opcoes.linhaFinal();
 				break;
 			case 0: // SAIR
 				System.out.println("Programa fechado!");
 				Opcoes.linhaFinal();
 				continuar = false;
-				break;
-			case 9:
-				RegraTres.regraDeTres();
-				Opcoes.linhaFinal();
 				break;
 			default:
 				System.out.println("Digite uma opcao valida");

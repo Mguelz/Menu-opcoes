@@ -39,7 +39,7 @@ public class ParImpar {
 				System.out.println("Digite um opcão válida");
 				opcao = true;
 			}
-			
+
 			System.out.println("Deseja jogar novamente? \n1 - Sim ou 2 - Não");
 			digitado = scanner.nextInt();
 			if (digitado == 1) {
