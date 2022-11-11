@@ -51,6 +51,10 @@ public class Main {
 				RegraTres.regraDeTres();
 				Opcoes.linhaFinal();
 				break;
+			case 11:
+				ConversorFahrenheit.ConverterFahrenheit();
+				Opcoes.linhaFinal();
+				break;
 			case 0: // SAIR
 				System.out.println("Programa fechado!");
 				Opcoes.linhaFinal();
