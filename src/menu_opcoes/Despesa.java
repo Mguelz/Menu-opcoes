@@ -19,7 +19,8 @@ public class Despesa {
 				tudoEmCartao = scanner.nextDouble();
 				System.out.println("");
 
-				if (tudoEmDinheiro < 0 || tudoEmCartao < 0) { // caso o que for gasto em dinheiro ou cartao for negativo, refazer todo os passos
+				if (tudoEmDinheiro < 0 || tudoEmCartao < 0) { // caso o que for gasto em dinheiro ou cartao for
+																// negativo, refazer todo os passos
 					System.out.println("Não é possível inserir valores negativos neste campo");
 					System.out.println("Insira novamente");
 					continuar = true;
