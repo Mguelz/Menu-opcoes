@@ -1,17 +1,29 @@
 package menu_opcoes;
 
+//import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		byte opcaoEscolha;
+		byte opcaoEscolha = 0;
 		boolean continuar = true;
 
 		do {
 			Opcoes.escolherOpcoes();
-			opcaoEscolha = scanner.nextByte();
+			/*
+			 * ao usuario tentar digitar algum valor inválido, o programa não poderá parar
+			 */
+			try {
+				opcaoEscolha = scanner.nextByte();
+			} catch (Exception e) {		 // Value out of range / RuntimeException / InputMismatchException
+				System.out.println("Você digtou um valor inválido \nProblema: " + e.getMessage());
+				continuar = true; // para que o fluxo do código continuar funcionando
+				break; // ignorar todos os código abaixo até bater na chave do loop while para continuar o loop
+			}
+//			finally {}
+
 			switch (opcaoEscolha) {
 			case 1:
 				IMC.imc();
