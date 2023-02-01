@@ -3,18 +3,46 @@ package menu_opcoes;
 //import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import menu_opcoes.calculo.ConversorFahrenheit;
+import menu_opcoes.calculo.Despesa;
+import menu_opcoes.calculo.Frete;
+import menu_opcoes.calculo.IMC;
+import menu_opcoes.calculo.MultaAvancado;
+import menu_opcoes.calculo.MultaSimples;
+import menu_opcoes.calculo.RegraTres;
+import menu_opcoes.calculo.Tabuada;
+import menu_opcoes.game.Jokenpo;
+import menu_opcoes.game.NumeroSorte;
+import menu_opcoes.game.ParImpar;
+
 public class Main {
+	
+	public static final byte OPCAO_SAIR = 0;
+	public static final byte OPCAO_IMC = 1;
+	public static final byte OPCAO_TABUADA = 2;
+	public static final byte OPCAO_DESPESA = 3;
+	public static final byte OPCAO_MULTA = 4;
+	public static final byte OPCAO_MULTA_AVANCADO = 5;
+	public static final byte OPCAO_NUMERO_SORTE = 6;
+	public static final byte OPCAO_FRETE = 7;
+	public static final byte OPCAO_PAR_IMPAR = 8;
+	public static final byte OPCAO_JOKENPO = 9;
+	public static final byte OPCAO_REGRA3 = 10;
+	public static final byte OPCAO_CONVERTER_FAHRENHEIT = 11;
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		Opcoes op = new Opcoes();
 		byte opcaoEscolha = 0;
 		boolean continuar = true;
 
 		do {
+//			op.verificarOqueForDigitado();
+			
+				
+//			esta funcionando, porem eu quero que o programa nao pare
+  
 			Opcoes.escolherOpcoes();
-			/*
-			 * ao usuario tentar digitar algum valor inválido, o programa não poderá parar
-			 */
 			try {
 				opcaoEscolha = scanner.nextByte();
 			} catch (Exception e) {		 // Value out of range / RuntimeException / InputMismatchException
@@ -22,58 +50,57 @@ public class Main {
 				continuar = true; // para que o fluxo do código continuar funcionando
 				break; // ignorar todos os código abaixo até bater na chave do loop while para continuar o loop
 			}
-//			finally {}
-
+			
 			switch (opcaoEscolha) {
-			case 1:
+			case OPCAO_IMC:
 				IMC.imc();
 				Opcoes.linhaFinal();
 				break;
-			case 2:
+			case OPCAO_TABUADA:
 				Tabuada.tabuada();
 				Opcoes.linhaFinal();
 				break;
-			case 3:
+			case OPCAO_DESPESA:
 				Despesa.despesa();
 				Opcoes.linhaFinal();
 				break;
-			case 4:
+			case OPCAO_MULTA:
 				MultaSimples.multa();
 				Opcoes.linhaFinal();
 				break;
-			case 5:
+			case OPCAO_MULTA_AVANCADO:
 				MultaAvancado.multaAvancado();
 				Opcoes.linhaFinal();
 				break;
-			case 6:
+			case OPCAO_NUMERO_SORTE:
 				NumeroSorte.numeroSorte();
 				break;
-			case 7:
+			case OPCAO_FRETE:
 				Frete.frete();
 				Opcoes.linhaFinal();
 				break;
-			case 8:
+			case OPCAO_PAR_IMPAR:
 				ParImpar.parImpar();
 				Opcoes.linhaFinal();
 				break;
-			case 9:
+			case OPCAO_JOKENPO:
 				Jokenpo.jokenpo();
 				break;
-			case 10:
+			case OPCAO_REGRA3:
 				RegraTres.regraDeTres();
 				Opcoes.linhaFinal();
 				break;
-			case 11:
+			case OPCAO_CONVERTER_FAHRENHEIT:
 				ConversorFahrenheit.ConverterFahrenheit();
 				Opcoes.linhaFinal();
 				break;
-			case 0: // SAIR
-				System.out.println("Programa fechado!");
+			case OPCAO_SAIR: // SAIR
+				System.out.println("Programa Fechado!");
 				Opcoes.linhaFinal();
 				continuar = false;
 				break;
 			default:
-				System.out.println("Digite uma opcao valida");
+				System.out.println("Digite uma Opcao Válida");
 				Opcoes.linhaFinal();
 				break;
 			}

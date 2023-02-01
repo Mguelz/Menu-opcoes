@@ -1,4 +1,4 @@
-package menu_opcoes;
+package menu_opcoes.calculo;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class RegraTres {
 		do {
 			double porcentagem, total, valor;
 			int digitou;
-
+			
 			System.out.print("\nDigite o valor total: ");
 			total = scanner.nextDouble();
 			System.out.print("Digite a porcentagem: ");

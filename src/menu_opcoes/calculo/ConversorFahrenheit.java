@@ -1,4 +1,4 @@
-package menu_opcoes;
+package menu_opcoes.calculo;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

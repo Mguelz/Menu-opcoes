@@ -1,4 +1,4 @@
-package menu_opcoes;
+package menu_opcoes.game;
 
 import java.util.Random;
 import java.util.Scanner;
