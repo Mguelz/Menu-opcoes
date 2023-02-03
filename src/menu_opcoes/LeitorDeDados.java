@@ -39,6 +39,10 @@ public class LeitorDeDados {
 	public int pegarNumeroInteiro() {
 		return Integer.parseInt(scanner.nextLine());
 	}
+	
+	public double pegarNumeroQuebrado() {
+		return Double.parseDouble(scanner.nextLine());
+	}
 
 	/**
 	 * fecha o Scanner

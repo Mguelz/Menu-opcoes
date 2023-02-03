@@ -1,11 +1,11 @@
 package menu_opcoes.game;
 
 import java.util.Random;
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class Jokenpo {
 	public static void jokenpo() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner  = new LeitorDeDados();
 		Random random = new Random();
 		int jogador, computador;
 		boolean continuar = false;
@@ -16,7 +16,7 @@ public class Jokenpo {
 			System.out.println("2. Papel");
 			System.out.println("3. Tesoura");
 			System.out.print("Digite a opção desejada: ");
-			jogador = scanner.nextInt();
+			jogador = scanner.pegarNumeroInteiro();
 			switch (jogador) {
 			case 1:
 				System.out.println("\nJogador escolheu Pedra");
@@ -31,7 +31,7 @@ public class Jokenpo {
 				System.out.println("\nOpção Inválida");
 			}
 			
-			computador = random.nextInt(3) + 1; // computador
+			computador = random.nextInt(3) + 1;
 			if (computador == 4) {
 				computador = 3;
 			}
@@ -55,7 +55,7 @@ public class Jokenpo {
 				System.out.println("\n      Você Perdeu!");
 			}
 			System.out.println("Deseja continuar jogando? \n1 - Sim ou 2 - Não");
-			jogador = scanner.nextInt();
+			jogador = scanner.pegarNumeroInteiro();
 			if (jogador == 1) {
 				continuar = true;
 			} else {

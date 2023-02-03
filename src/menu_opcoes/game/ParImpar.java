@@ -1,19 +1,20 @@
 package menu_opcoes.game;
 
 import java.util.Random;
-import java.util.Scanner;
+
+import menu_opcoes.LeitorDeDados;
 
 public class ParImpar {
 	public static void parImpar() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner = new LeitorDeDados();
 		Random random = new Random();
 
 		int digitado = -1, imparPar, sorteio;
-		boolean opcao = false; // continuar jogando
+		boolean continuarJogando = false;
 
 		do {
 			System.out.println("\nEscolha 0 - (par) ou 1 - (ímpar)");
-			digitado = scanner.nextInt();
+			digitado = scanner.pegarNumeroInteiro();
 
 			sorteio = random.nextInt(11);
 			imparPar = sorteio % 2;
@@ -37,18 +38,18 @@ public class ParImpar {
 				}
 			} else {
 				System.out.println("Digite um opcão válida");
-				opcao = true;
+				continuarJogando = true;
 			}
 
 			System.out.println("Deseja jogar novamente? \n1 - Sim ou 2 - Não");
-			digitado = scanner.nextInt();
+			digitado = scanner.pegarNumeroInteiro();
 			if (digitado == 1) {
-				opcao = true;
+				continuarJogando = true;
 			} else {
-				opcao = false;
+				continuarJogando = false;
 			}
 
-		} while (opcao);
+		} while (continuarJogando);
 
 	}
 }

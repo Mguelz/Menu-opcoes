@@ -1,10 +1,10 @@
 package menu_opcoes.calculo;
 
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class MultaSimples {
 	public static void multa() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner = new LeitorDeDados();
 		byte pontosCNH = 0;
 		boolean continuar = true, repetir = false;
 		int opcao;
@@ -12,7 +12,7 @@ public class MultaSimples {
 		do {
 			do {
 				System.out.println("Quantos pontos na CNH você recebeu?");
-				pontosCNH = scanner.nextByte();
+				pontosCNH = scanner.pegarByteDigitado();
 				if (pontosCNH == 3) {
 					System.out.println("Infração Leve ");
 					System.out.println("R$ 88,38 de multa");
@@ -37,7 +37,7 @@ public class MultaSimples {
 			} while (continuar);
 
 			System.out.println("\nDeseja calcular outra vez? \n1 - Sim ou  2 - Não");
-			opcao = scanner.nextInt();
+			opcao = scanner.pegarNumeroInteiro();
 			if (opcao == 1) {
 				repetir = true;
 			} else {

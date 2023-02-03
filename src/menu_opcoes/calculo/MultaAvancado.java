@@ -1,10 +1,10 @@
 package menu_opcoes.calculo;
 
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class MultaAvancado {
 	public static void multaAvancado() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner  = new LeitorDeDados();
 		byte qtdMultas;
 		int somaPontosCNH = 0, pontosCNH;
 		double infraLeve = 88.38, infraMedia = 130.16, infraGrave = 195.23, infraGravissima = 293.47;
@@ -14,10 +14,10 @@ public class MultaAvancado {
 
 		do {
 			System.out.println("Quantas multas você tomou ");
-			qtdMultas = scanner.nextByte();
+			qtdMultas = scanner.pegarByteDigitado();
 			for (int i = 1; i <= qtdMultas; i++) {
 				System.out.println("Quantos pontos na CNH você recebeu na multa " + i);
-				pontosCNH = scanner.nextInt();
+				pontosCNH = scanner.pegarNumeroInteiro();
 				if (pontosCNH == 3 || pontosCNH == 4 || pontosCNH == 5 || pontosCNH == 7) { // somando somente os pontos (3, 4, 5, e 7)
 					somaPontosCNH += pontosCNH;												// evitando somar pontos errados que o user colocar
 				}

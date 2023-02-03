@@ -1,18 +1,18 @@
 package menu_opcoes.calculo;
 
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class Tabuada {
 	static int tabuada = 0, valorFinal, continuar = 1; // static para que os metodos staticos tenham acesso à variavel
 
 	public static void tabuada() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner = new LeitorDeDados();
 
 		do {
 			System.out.println("Qual a tabuada que você deseja: ");
-			tabuada = scanner.nextInt();
+			tabuada = scanner.pegarNumeroInteiro();
 			System.out.println("Até que valor deseja calcular? ");
-			valorFinal = scanner.nextInt();
+			valorFinal = scanner.pegarNumeroInteiro();
 			int valorSecundario = 0;
 			do {
 				System.out.println(tabuada + " x " + valorSecundario + " = " + (tabuada * valorSecundario));
@@ -20,7 +20,7 @@ public class Tabuada {
 			} while (valorSecundario < (valorFinal + 1));
 
 			System.out.println("\nDeseja consutlar outra tabuada? \n1 - Sim ou 2 - Não");
-			tabuada = scanner.nextInt();
+			tabuada = scanner.pegarNumeroInteiro();
 			if (tabuada == 1) {
 				continuar = 0;
 			} else {
@@ -30,11 +30,11 @@ public class Tabuada {
 	}
 
 	public static void tabuadaPrincipiante() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner = new LeitorDeDados();
 
 		do {
 			System.out.println("Qual a tabuada que você deseja: ");
-			tabuada = scanner.nextInt();
+			tabuada = scanner.pegarNumeroInteiro();
 			int i = 0;
 			do {
 				System.out.println(tabuada + " x " + i + " = " + (tabuada * i));
@@ -42,7 +42,7 @@ public class Tabuada {
 			} while (i < 11);
 
 			System.out.println("\nDeseja consutlar outra tabuada? \n1 - Sim ou 2 - Não");
-			tabuada = scanner.nextInt();
+			tabuada = scanner.pegarNumeroInteiro();
 			if (tabuada == 1) {
 				continuar = 0;
 			} else {

@@ -1,11 +1,11 @@
 package menu_opcoes.game;
 
 import java.util.Random;
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class NumeroSorte {
 	public static void numeroSorte() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner  = new LeitorDeDados();
 		Random random = new Random();
 		int digitado, tentativa = 0, opcao;
 		boolean repetir = false;
@@ -16,7 +16,7 @@ public class NumeroSorte {
 				System.out.println("Tentativa " + (tentativa + 1));
 				tentativa++;
 				System.out.println("Digite um número entre 1 e 10: ");
-				digitado = scanner.nextInt();
+				digitado = scanner.pegarNumeroInteiro();
 				int sorteio = random.nextInt(10) + 1;
 				if (digitado == sorteio) {
 					System.out.println("Você Acertou!, Parabéns ");
@@ -28,7 +28,7 @@ public class NumeroSorte {
 			}
 
 			System.out.println("\nDeseja jogar novamente? \n1 - Sim ou 2 - Não");
-			opcao = scanner.nextInt();
+			opcao = scanner.pegarNumeroInteiro();
 			if (opcao == 1) {
 				repetir = true;
 			} else {

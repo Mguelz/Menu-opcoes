@@ -1,8 +1,5 @@
 package menu_opcoes;
 
-//import java.util.InputMismatchException;
-import java.util.Scanner;
-
 import menu_opcoes.calculo.ConversorFahrenheit;
 import menu_opcoes.calculo.Despesa;
 import menu_opcoes.calculo.Frete;
@@ -16,7 +13,7 @@ import menu_opcoes.game.NumeroSorte;
 import menu_opcoes.game.ParImpar;
 
 public class Main {
-	
+
 	public static final byte OPCAO_SAIR = 0;
 	public static final byte OPCAO_IMC = 1;
 	public static final byte OPCAO_TABUADA = 2;
@@ -31,26 +28,24 @@ public class Main {
 	public static final byte OPCAO_CONVERTER_FAHRENHEIT = 11;
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		Opcoes op = new Opcoes();
+		LeitorDeDados scanner  = new LeitorDeDados();
+//		Opcoes op = new Opcoes();
 		byte opcaoEscolha = 0;
 		boolean continuar = true;
 
 		do {
-//			op.verificarOqueForDigitado();
-			
-				
-//			esta funcionando, porem eu quero que o programa nao pare
-  
+//			op.verificarOqueForDigitado(); // metodo que continua o codigo caso tenha excessao 
+
 			Opcoes.escolherOpcoes();
-			try {
-				opcaoEscolha = scanner.nextByte();
-			} catch (Exception e) {		 // Value out of range / RuntimeException / InputMismatchException
+			try { // esta funcionando, porem eu quero que o programa nao pare
+				opcaoEscolha = scanner.pegarByteDigitado();
+			} catch (Exception e) { // Value out of range / RuntimeException / InputMismatchException
 				System.out.println("Você digtou um valor inválido \nProblema: " + e.getMessage());
 				continuar = true; // para que o fluxo do código continuar funcionando
-				break; // ignorar todos os código abaixo até bater na chave do loop while para continuar o loop
+				break; // ignorar todos os código abaixo até bater na chave do loop while para
+						// continuar o loop
 			}
-			
+
 			switch (opcaoEscolha) {
 			case OPCAO_IMC:
 				IMC.imc();
@@ -100,12 +95,12 @@ public class Main {
 				continuar = false;
 				break;
 			default:
-				System.out.println("Digite uma Opcao Válida");
+				System.out.println("Digite uma Opcao Válida:");
 				Opcoes.linhaFinal();
 				break;
 			}
 		} while (continuar);
-		scanner.close();
+		scanner.fecharLeitor();
 
 	}
 

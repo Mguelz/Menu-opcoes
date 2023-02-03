@@ -1,10 +1,10 @@
 package menu_opcoes.calculo;
 
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class Despesa {
 	public static void despesa() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner  = new LeitorDeDados();
 		double rendaMes = 0, tudoEmDinheiro = 0, tudoEmCartao = 0, totalDespesas = 0, restante = 0;
 		boolean continuar = false;
 		int opcao, teste = 11;
@@ -12,11 +12,11 @@ public class Despesa {
 		do {
 			do {
 				System.out.println("qual a sua renda neste mes: ");
-				rendaMes = scanner.nextDouble();
+				rendaMes = scanner.pegarNumeroQuebrado();
 				System.out.println("quantidade gasto em DINHEIRO: ");
-				tudoEmDinheiro = scanner.nextDouble();
+				tudoEmDinheiro = scanner.pegarNumeroQuebrado();
 				System.out.println("quantidade gasto em CARTÃO: ");
-				tudoEmCartao = scanner.nextDouble();
+				tudoEmCartao = scanner.pegarNumeroQuebrado();
 				System.out.println("");
 
 				if (tudoEmDinheiro < 0 || tudoEmCartao < 0) { // caso o que for gasto em dinheiro ou cartao for
@@ -45,7 +45,7 @@ public class Despesa {
 			} while (teste < 10);
 
 			System.out.println("\nDeseja calcular outra despesa? \n1 - Sim ou 2 - Não");
-			opcao = scanner.nextInt();
+			opcao = scanner.pegarNumeroInteiro();
 			if (opcao == 1) {
 				continuar = true;
 			} else {

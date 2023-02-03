@@ -1,13 +1,13 @@
 package menu_opcoes.calculo;
 
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class Frete {
 	public static void frete() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner  = new LeitorDeDados();
 
 		System.out.println("Digite sua UF");
-		String uf = scanner.next().toUpperCase(); // o toUpperCase aumentara o caractere que o user digitar
+		String uf = scanner.pegarTextoCurto().toUpperCase();
 		switch (uf) {
 		case "SP":
 		case "RJ":

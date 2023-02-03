@@ -1,13 +1,13 @@
 package menu_opcoes.calculo;
 
 import java.text.DecimalFormat;
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class ConversorFahrenheit {
 	public static void ConverterFahrenheit() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner = new LeitorDeDados();
 
-		double c, f;
+		double celcius, fahrenheit;
 		boolean continuar = false;
 		int opcao = 0;
 
@@ -15,17 +15,15 @@ public class ConversorFahrenheit {
 
 		do {
 			DecimalFormat formatador = new DecimalFormat("#0.0");
-
 			System.out.print("Digite a temperatura em fahrenheit: ");
-			f = scanner.nextDouble();
+			fahrenheit = scanner.pegarNumeroQuebrado();
 
-			c = (5 * (f - 32)) / 9;
+			celcius = (5 * (fahrenheit - 32)) / 9;
 
-			System.out.println("Temperatura em Celsius: " + formatador.format(c) + "°C");
+			System.out.println("Temperatura em Celsius: " + formatador.format(celcius) + "°C");
 
 			System.out.println("Deseja converter novamente? \n1 - Sim ou 2 - Não");
-			opcao = scanner.nextInt();
-
+			opcao = scanner.pegarNumeroInteiro();
 			if (opcao == 1) {
 				continuar = true;
 			} else {
