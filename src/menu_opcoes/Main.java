@@ -1,6 +1,7 @@
 package menu_opcoes;
 
 import menu_opcoes.calculo.ConversorFahrenheit;
+import menu_opcoes.calculo.DescontoAplicado;
 import menu_opcoes.calculo.Despesa;
 import menu_opcoes.calculo.Frete;
 import menu_opcoes.calculo.IMC;
@@ -26,6 +27,7 @@ public class Main {
 	public static final byte OPCAO_JOKENPO = 9;
 	public static final byte OPCAO_REGRA3 = 10;
 	public static final byte OPCAO_CONVERTER_FAHRENHEIT = 11;
+	public static final byte OPCAO_DESCONTO_APLICADO = 12;
 
 	public static void main(String[] args) {
 		LeitorDeDados scanner  = new LeitorDeDados();
@@ -34,7 +36,7 @@ public class Main {
 		boolean continuar = true;
 
 		do {
-//			op.verificarOqueForDigitado(); // metodo que continua o codigo caso tenha excessao 
+//			op.verificarOqueForDigitado(); // metodo que continua o codigo caso tenha excessao  (nao esta fucionando como quero)
 
 			Opcoes.escolherOpcoes();
 			try { // esta funcionando, porem eu quero que o programa nao pare
@@ -87,6 +89,10 @@ public class Main {
 				break;
 			case OPCAO_CONVERTER_FAHRENHEIT:
 				ConversorFahrenheit.ConverterFahrenheit();
+				Opcoes.linhaFinal();
+				break;
+			case OPCAO_DESCONTO_APLICADO:
+				DescontoAplicado.desontoAplicado();
 				Opcoes.linhaFinal();
 				break;
 			case OPCAO_SAIR: // SAIR
