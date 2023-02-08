@@ -16,7 +16,7 @@ import menu_opcoes.game.Jokenpo;
 import menu_opcoes.game.NumeroSorte;
 import menu_opcoes.game.ParImpar;
 
-public class Main {
+public class MenuPrincipal {
 
 	public static final byte OPCAO_SAIR = 0;
 	public static final byte OPCAO_IMC = 1;
@@ -33,13 +33,13 @@ public class Main {
 	public static final byte OPCAO_DESCONTO_APLICADO = 12;
 	public static final byte OPCAO_GASOLINA_OU_ALCOOL = 13;
 
-	public static void main(String[] args) {
+	public static void navegação() {
 		LeitorDeDados scanner = new LeitorDeDados();
 		Opcoes op = new Opcoes();
 		byte opcaoEscolha = 0;
 		boolean continuar = true;
 		boolean continuarTry = true;
-		
+
 		do {
 //			op.verificarOqueForDigitado(); // consertar este metodo para que funcione fora desta classe
 			Opcoes.escolherOpcoes();
