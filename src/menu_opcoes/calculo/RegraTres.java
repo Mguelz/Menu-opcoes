@@ -4,6 +4,10 @@ import java.text.DecimalFormat;
 import menu_opcoes.LeitorDeDados;
 
 public class RegraTres {
+	
+	/**
+	 * ira calular por uma regra de tres com os valores que o usuario digitar
+	 */
 	public static void regraDeTres() {
 
 		LeitorDeDados scanner = new LeitorDeDados();

@@ -4,6 +4,9 @@ import menu_opcoes.LeitorDeDados;
 
 public class GasolinaOuAlcool {
 
+	/**
+	 * O sistema irá calular se é mais vantajoso abastecer com gasolina ou alcool
+	 */
 	public static void gasolinaOuAlcool() {
 		LeitorDeDados scanner = new LeitorDeDados();
 

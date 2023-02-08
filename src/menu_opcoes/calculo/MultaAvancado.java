@@ -3,6 +3,12 @@ package menu_opcoes.calculo;
 import menu_opcoes.LeitorDeDados;
 
 public class MultaAvancado {
+	
+	/**
+	 * irá perguntar quantas multas voce recebeu<br>
+	 * depois quantos pontos recebeu na multa 1, e assim por diante...<br>
+	 * no final ele ira mostrar ao todo quantos pontos voce recebeu e a quantidade que ira pricisar pagar
+	 */
 	public static void multaAvancado() {
 		LeitorDeDados scanner  = new LeitorDeDados();
 		byte qtdMultas;

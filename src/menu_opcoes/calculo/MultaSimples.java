@@ -3,6 +3,11 @@ package menu_opcoes.calculo;
 import menu_opcoes.LeitorDeDados;
 
 public class MultaSimples {
+
+	/**
+	 * Pergunta ao usuario a quantidade de pontos na CNH que ele recebeu<br>
+	 * o sistema irá calular a gravidade da infração e o valor da multa 
+	 */
 	public static void multa() {
 		LeitorDeDados scanner = new LeitorDeDados();
 		byte pontosCNH = 0;

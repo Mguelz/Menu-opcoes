@@ -4,6 +4,10 @@ import java.util.Random;
 import menu_opcoes.LeitorDeDados;
 
 public class NumeroSorte {
+	
+	/**
+	 * O sistema irá gerar um numero aleatorio e o usuario irá tentar acertar
+	 */
 	public static void numeroSorte() {
 		LeitorDeDados scanner  = new LeitorDeDados();
 		Random random = new Random();

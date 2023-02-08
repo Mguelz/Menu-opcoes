@@ -3,6 +3,10 @@ package menu_opcoes.calculo;
 import menu_opcoes.LeitorDeDados;
 
 public class DescontoAplicado {
+	
+	/**
+	 * de acordo com a quantidade que for gasta o sistema irá calcular o desconto 
+	 */
 	public static void desontoAplicado() {
 		LeitorDeDados scanner = new LeitorDeDados();
 		double desconto, valorCompra, valorDescontado;

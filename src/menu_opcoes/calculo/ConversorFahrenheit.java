@@ -4,6 +4,10 @@ import java.text.DecimalFormat;
 import menu_opcoes.LeitorDeDados;
 
 public class ConversorFahrenheit {
+	
+	/**
+	 * Irá converter de a temperatura de Fahrenheit para Celcius 
+	 */
 	public static void ConverterFahrenheit() {
 		LeitorDeDados scanner = new LeitorDeDados();
 

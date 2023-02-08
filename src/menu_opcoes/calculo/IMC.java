@@ -6,6 +6,9 @@ public class IMC {
 
 	final static byte VALOR_PARACONTINUAR_NO_SISTEMA = 1;
 
+	/**
+	 * calcula de acordo com a massa e a altura da pessoa se ela esta no peso ideal ou não
+	 */
 	public static void imc() { // metodo avancado
 		LeitorDeDados scanner = new LeitorDeDados();
 		double massa = 0, altura = 0, imc = 0;

@@ -5,6 +5,12 @@ import java.util.Random;
 import menu_opcoes.LeitorDeDados;
 
 public class ParImpar {
+	
+	/**
+	 * O usuario ira escolhe par ou impar<br>
+	 * o sistema tambem ira escolher uma opcao<br>
+	 * no final o sistema ira calular quem ganhou
+	 */
 	public static void parImpar() {
 		LeitorDeDados scanner = new LeitorDeDados();
 		Random random = new Random();

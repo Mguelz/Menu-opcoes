@@ -3,6 +3,13 @@ package menu_opcoes.calculo;
 import menu_opcoes.LeitorDeDados;
 
 public class Despesa {
+	
+	/**
+	 * recolhe a quantidade de dinheiro que arrecadou no mes<br> 
+	 * tambem obtem a quantidade obtida em dinheiro e cartao<br>
+	 * o sistema fará o calculo se voce esta devendo ou sobrando dinheiro<br>
+	 * 
+	 */
 	public static void despesa() {
 		LeitorDeDados scanner  = new LeitorDeDados();
 		double rendaMes = 0, tudoEmDinheiro = 0, tudoEmCartao = 0, totalDespesas = 0, restante = 0;

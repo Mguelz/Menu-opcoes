@@ -3,6 +3,11 @@ package menu_opcoes.calculo;
 import menu_opcoes.LeitorDeDados;
 
 public class Frete {
+	
+	/**
+	 * O usuario irá digitar aonde ele mora<br>
+	 * o sistema irá calular a quantidade de desconto ele tem de acordo com o estado
+	 */
 	public static void frete() {
 		LeitorDeDados scanner = new LeitorDeDados();
 		boolean continuar = true;

@@ -4,6 +4,12 @@ import java.util.Random;
 import menu_opcoes.LeitorDeDados;
 
 public class Jokenpo {
+	
+	/**
+	 * O usuario ira escolher entre pedra, papel ou tesoura<br>
+	 * o sistema tambem ira escolher uma opcao<br>
+	 * no final ira verificar quem ganhou
+	 */
 	public static void jokenpo() {
 		LeitorDeDados scanner  = new LeitorDeDados();
 		Random random = new Random();

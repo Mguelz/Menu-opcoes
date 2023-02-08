@@ -4,7 +4,10 @@ import menu_opcoes.LeitorDeDados;
 
 public class Tabuada {
 	static int tabuada = 0, valorFinal, continuar = 1; // static para que os metodos staticos tenham acesso à variavel
-
+	
+	/**
+	 * o usuario irá escolher qual tabuada ele quer e até que numero será multiplicado
+	 */
 	public static void tabuada() {
 		LeitorDeDados scanner = new LeitorDeDados();
 
