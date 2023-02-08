@@ -39,9 +39,9 @@ public class Main {
 		byte opcaoEscolha = 0;
 		boolean continuar = true;
 		boolean continuarTry = true;
+		
 		do {
-//			op.verificarOqueForDigitado(); // metodo que continua o codigo caso tenha excessao  (nao esta fucionando como quero)
-
+//			op.verificarOqueForDigitado(); // consertar este metodo para que funcione fora desta classe
 			Opcoes.escolherOpcoes();
 			do {
 
@@ -127,5 +127,4 @@ public class Main {
 		scanner.fecharLeitor();
 
 	}
-
 }
