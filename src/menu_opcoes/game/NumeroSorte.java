@@ -12,6 +12,7 @@ public class NumeroSorte {
 
 		objetivoJogo(); // descrevendo como funciona este mini game
 		do {
+			System.out.println("\n------------------ NÚMERO DA SORTE -----------------");
 			for (int continuar = 1; continuar <= 3; continuar++) {
 				System.out.println("Tentativa " + (tentativa + 1));
 				tentativa++;

@@ -9,6 +9,7 @@ public class Tabuada {
 		LeitorDeDados scanner = new LeitorDeDados();
 
 		do {
+			System.out.println("\n------------------ TABUADA -----------------");
 			System.out.println("Qual a tabuada que você deseja: ");
 			tabuada = scanner.pegarNumeroInteiro();
 			System.out.println("Até que valor deseja calcular? ");

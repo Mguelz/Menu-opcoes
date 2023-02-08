@@ -1,21 +1,22 @@
 package menu_opcoes.calculo;
 
-import java.util.Scanner;
+import menu_opcoes.LeitorDeDados;
 
 public class IMC {
-	
+
 	final static byte VALOR_PARACONTINUAR_NO_SISTEMA = 1;
-	
+
 	public static void imc() { // metodo avancado
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner = new LeitorDeDados();
 		double massa = 0, altura = 0, imc = 0;
 		boolean continuar = false;
 
 		do {
+			System.out.println("\n------------------ IMC -----------------");
 			System.out.println("Qual sua massa");
-			massa = scanner.nextDouble();
+			massa = scanner.pegarNumeroQuebrado();
 			System.out.println("Qual sua altura");
-			altura = scanner.nextDouble();
+			altura = scanner.pegarNumeroQuebrado();
 
 			imc = massa / (altura * altura);
 			System.out.print("Seu IMC é: " + imc + "\n");
@@ -29,21 +30,21 @@ public class IMC {
 				System.out.print("Seu índice é: Obesidade");
 			}
 			System.out.println("\nDeseja calcular outro IMC? \n1 - SIM ou 2 - NÂO");
-			continuar = scanner.nextByte() == VALOR_PARACONTINUAR_NO_SISTEMA;
+			continuar = scanner.pegarByteDigitado() == VALOR_PARACONTINUAR_NO_SISTEMA;
 		} while (continuar);
 	}
-	
+
 	public static void imcIntermediario() { // metodo intermediario
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner = new LeitorDeDados();
 		double massa = 0, altura = 0, imc = 0;
 		int digitou;
 		boolean continuar = true;
 
 		do {
 			System.out.println("Qual sua massa");
-			massa = scanner.nextDouble();
+			massa = scanner.pegarNumeroQuebrado();
 			System.out.println("Qual sua altura");
-			altura = scanner.nextDouble();
+			altura = scanner.pegarNumeroQuebrado();
 
 			imc = massa / (altura * altura);
 			System.out.print("Seu IMC é: " + imc + "\n");
@@ -57,23 +58,23 @@ public class IMC {
 				System.out.print("Seu índice é: Obesidade");
 			}
 			System.out.println("\nDeseja calcular outro IMC? \n1 - SIM ou 2 - NÂO");
-			digitou = scanner.nextInt();
+			digitou = scanner.pegarNumeroInteiro();
 			if (digitou != 1) {
 				continuar = false;
 			}
 		} while (continuar);
 	}
-	
+
 	public static void imcPrincipiante() {
-		Scanner scanner = new Scanner(System.in);
+		LeitorDeDados scanner = new LeitorDeDados();
 		double massa = 0, altura = 0, imc = 0;
 		int continuar, digitou;
 
 		do {
 			System.out.println("Qual sua massa");
-			massa = scanner.nextDouble();
+			massa = scanner.pegarNumeroQuebrado();
 			System.out.println("Qual sua altura");
-			altura = scanner.nextDouble();
+			altura = scanner.pegarNumeroQuebrado();
 
 			imc = massa / (altura * altura);
 			System.out.print("Seu IMC é: " + imc + "\n");
@@ -87,8 +88,8 @@ public class IMC {
 				System.out.print("Seu índice é: Obesidade");
 			}
 			System.out.println("\n");
-			System.out.println("Deseja calcular outro IMC? \n1 - SIM ou 2 - NÂO");
-			digitou = scanner.nextInt();
+			System.out.println("Deseja calcular outro IMC? \n1 - SIM ou 2 - NÃO");
+			digitou = scanner.pegarNumeroInteiro();
 			if (digitou == 1) {
 				continuar = 1;
 			} else {

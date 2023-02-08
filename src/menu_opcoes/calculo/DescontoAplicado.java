@@ -9,6 +9,7 @@ public class DescontoAplicado {
 		boolean continuarComprando = true;
 		int opcao;
 
+		System.out.println("\n------------------ DESCONTO APLICADO -----------------");
 		do {
 			System.out.println("\nDigite o valor da sua compra: ");
 			valorCompra = scanner.pegarNumeroQuebrado();

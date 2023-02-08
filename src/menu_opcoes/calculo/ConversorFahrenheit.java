@@ -11,6 +11,7 @@ public class ConversorFahrenheit {
 		boolean continuar = false;
 		int opcao = 0;
 
+		System.out.println("\n------------------ CONVERSOR DE GRAUS -----------------");
 		System.out.println("Converter a temperatura em Fahrenheit para Celcius \n");
 
 		do {

@@ -10,8 +10,8 @@ public class Jokenpo {
 		int jogador, computador;
 		boolean continuar = false;
 
+		System.out.println("\n------------------ JOKENPÔ-----------------");
 		do {
-			System.out.println("_________JoKenPô_________");
 			System.out.println("1. Pedra");
 			System.out.println("2. Papel");
 			System.out.println("3. Tesoura");

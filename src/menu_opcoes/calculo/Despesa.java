@@ -11,6 +11,7 @@ public class Despesa {
 
 		do {
 			do {
+				System.out.println("\n------------------ DESPESA -----------------");
 				System.out.println("qual a sua renda neste mes: ");
 				rendaMes = scanner.pegarNumeroQuebrado();
 				System.out.println("quantidade gasto em DINHEIRO: ");

@@ -1,9 +1,12 @@
 package menu_opcoes;
 
+import java.util.InputMismatchException;
+
 import menu_opcoes.calculo.ConversorFahrenheit;
 import menu_opcoes.calculo.DescontoAplicado;
 import menu_opcoes.calculo.Despesa;
 import menu_opcoes.calculo.Frete;
+import menu_opcoes.calculo.GasolinaOuAlcool;
 import menu_opcoes.calculo.IMC;
 import menu_opcoes.calculo.MultaAvancado;
 import menu_opcoes.calculo.MultaSimples;
@@ -28,25 +31,36 @@ public class Main {
 	public static final byte OPCAO_REGRA3 = 10;
 	public static final byte OPCAO_CONVERTER_FAHRENHEIT = 11;
 	public static final byte OPCAO_DESCONTO_APLICADO = 12;
+	public static final byte OPCAO_GASOLINA_OU_ALCOOL = 13;
 
 	public static void main(String[] args) {
-		LeitorDeDados scanner  = new LeitorDeDados();
-//		Opcoes op = new Opcoes();
+		LeitorDeDados scanner = new LeitorDeDados();
+		Opcoes op = new Opcoes();
 		byte opcaoEscolha = 0;
 		boolean continuar = true;
-
+		boolean continuarTry = true;
 		do {
 //			op.verificarOqueForDigitado(); // metodo que continua o codigo caso tenha excessao  (nao esta fucionando como quero)
 
 			Opcoes.escolherOpcoes();
-			try { // esta funcionando, porem eu quero que o programa nao pare
-				opcaoEscolha = scanner.pegarByteDigitado();
-			} catch (Exception e) { // Value out of range / RuntimeException / InputMismatchException
-				System.out.println("Você digtou um valor inválido \nProblema: " + e.getMessage());
-				continuar = true; // para que o fluxo do código continuar funcionando
-				break; // ignorar todos os código abaixo até bater na chave do loop while para
-						// continuar o loop
-			}
+			do {
+
+				System.out.println("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ":");
+				try {
+					opcaoEscolha = scanner.pegarByteDigitado();
+					if (opcaoEscolha >= 0 || opcaoEscolha <= 12) {
+						continuarTry = false;
+					} else {
+						System.out.println("Opção inválida, digite novamente.");
+					}
+				} catch (InputMismatchException erroDeInput) {
+					System.out.println("\nÉ somente permitido números!");
+					scanner.pegarTextoCompleto();
+				} catch (Exception e) {
+					System.out.println("error: " + e);
+					scanner.pegarTextoCompleto();
+				}
+			} while (continuarTry);
 
 			switch (opcaoEscolha) {
 			case OPCAO_IMC:
@@ -95,8 +109,12 @@ public class Main {
 				DescontoAplicado.desontoAplicado();
 				Opcoes.linhaFinal();
 				break;
+			case OPCAO_GASOLINA_OU_ALCOOL:
+				GasolinaOuAlcool.gasolinaOuAlcool();
+				Opcoes.linhaFinal();
+				break;
 			case OPCAO_SAIR: // SAIR
-				System.out.println("Programa Fechado!");
+				System.out.println("\nPrograma Fechado!");
 				Opcoes.linhaFinal();
 				continuar = false;
 				break;

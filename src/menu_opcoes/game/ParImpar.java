@@ -12,6 +12,7 @@ public class ParImpar {
 		int digitado = -1, imparPar, sorteio;
 		boolean continuarJogando = false;
 
+		System.out.println("\n------------------ PAR OU ÍMPAR-----------------");
 		do {
 			System.out.println("\nEscolha 0 - (par) ou 1 - (ímpar)");
 			digitado = scanner.pegarNumeroInteiro();

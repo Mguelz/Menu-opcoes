@@ -13,6 +13,7 @@ public class MultaAvancado {
 		boolean continuar = false;
 
 		do {
+			System.out.println("\n------------------ MULTA -----------------");
 			System.out.println("Quantas multas você tomou ");
 			qtdMultas = scanner.pegarByteDigitado();
 			for (int i = 1; i <= qtdMultas; i++) {

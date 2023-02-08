@@ -11,6 +11,7 @@ public class MultaSimples {
 
 		do {
 			do {
+				System.out.println("\n------------------ MULTA -----------------");
 				System.out.println("Quantos pontos na CNH você recebeu?");
 				pontosCNH = scanner.pegarByteDigitado();
 				if (pontosCNH == 3) {

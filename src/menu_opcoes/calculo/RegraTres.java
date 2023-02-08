@@ -10,6 +10,8 @@ public class RegraTres {
 		DecimalFormat formatador = new DecimalFormat("#0.0");
 
 		int continuar;
+
+		System.out.println("\n------------------ REGRA DE TRÊS -----------------");
 		do {
 			double porcentagem, total, valor;
 			int digitou;
