@@ -9,6 +9,7 @@ public class Opcoes {
 	 * Apresenta ao usuario o menu de opcoes
 	 */
 	public static void escolherOpcoes() {
+		System.out.println("-------------------------------- Tela de Menu --------------------------------");
 		System.out.println("\nEscolha uma das opcoes abaixo \nDigite um numero: \n");
 		System.out.println(" 1 - IMC \n 2 - Tabuada \n 3 - Despesas \n 4 - Multas (simples) \n 5 - Multas (avançado) \n 6 - Número da sorte \n 7 - Frete \n 8 - Par ou impar \n 9 - Jokenpo \n10 - Regra de 3 \n11 - Conversor de Fahrenheit \n12 - Desconto Aplicado \n13 - Cálculo para Comprar Gasolina ou Álcool\n0 - Sair \n");
 	}

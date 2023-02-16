@@ -10,7 +10,7 @@ public class LeitorDeDados {
 	}
 	
 	public byte pegarByteDigitado() {
-		return scanner.nextByte();
+		return Byte.parseByte(scanner.nextLine());
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class LeitorDeDados {
 	public int pegarNumeroInteiro() {
 		return Integer.parseInt(scanner.nextLine());
 	}
-	
+
 	public double pegarNumeroQuebrado() {
 		return Double.parseDouble(scanner.nextLine());
 	}

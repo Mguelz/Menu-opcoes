@@ -13,30 +13,53 @@ public class IMC {
 		LeitorDeDados scanner = new LeitorDeDados();
 		double massa = 0, altura = 0, imc = 0;
 		boolean continuar = false;
-
+		boolean continuarTry = false;
+		boolean digitado;
+		
 		do {
-			System.out.println("\n------------------ IMC -----------------");
-			System.out.println("Qual sua massa");
-			massa = scanner.pegarNumeroQuebrado();
-			System.out.println("Qual sua altura");
-			altura = scanner.pegarNumeroQuebrado();
+		try {
+			do {
+				System.out.println("\n------------------ IMC -----------------\n");
+				System.out.print("Qual sua massa: ");
+				massa = scanner.pegarNumeroQuebrado();
+				System.out.print("Qual sua altura: ");
+				altura = scanner.pegarNumeroQuebrado();
 
-			imc = massa / (altura * altura);
-			System.out.print("Seu IMC é: " + imc + "\n");
-			if (imc < 18.5) {
-				System.out.print("Seu índice é: Magreza");
-			} else if (imc >= 18.5 && imc < 24.9) {
-				System.out.print("Seu índice é: Normal");
-			} else if (imc >= 24.9 && imc < 30) {
-				System.out.print("Seu índice é: Sobrepeso");
-			} else {
-				System.out.print("Seu índice é: Obesidade");
-			}
-			System.out.println("\nDeseja calcular outro IMC? \n1 - SIM ou 2 - NÂO");
-			continuar = scanner.pegarByteDigitado() == VALOR_PARACONTINUAR_NO_SISTEMA;
-		} while (continuar);
+				imc = massa / (altura * altura);
+				System.out.print("\nSeu IMC é: " + imc + "\n"); // TODO pode colocar dentro dos if/else para nao imprimir junto com o else
+				if (imc < 18.5) {
+					System.out.println("Seu índice é: Magreza");
+				} else if (imc >= 18.5 && imc < 24.9) {
+					System.out.println("Seu índice é: Normal");
+				} else if (imc >= 24.9 && imc < 30) {
+					System.out.println("Seu índice é: Sobrepeso");
+				} else if (imc < 50){
+					System.out.println("Seu índice é: Obesidade");
+				} else {
+					System.out.println("A massa ou altura que você colocou não é um valor válido!");
+				}
+				
+				System.out.println("\nDeseja calcular outro IMC? \n1 - SIM ou 2 - NÂO");
+				boolean repetir = digitado = scanner.pegarByteDigitado() == VALOR_PARACONTINUAR_NO_SISTEMA;
+				System.out.println("Você escolheu: " + repetir);
+				
+				if (digitado == true) {
+					continuarTry = true;
+					break;
+				} else {
+					continuarTry = false;
+				}
+				
+			} while (continuar);
+		} catch (Exception e) {
+			System.out.println("É somente permitido números para massa e altura!");
+		}
+		} while(continuarTry);
 	}
 
+	/**
+	 * outras formas de fazer o calculo do imc, pra relembrar como fazia antigamente
+	 */
 	public static void imcIntermediario() { // metodo intermediario
 		LeitorDeDados scanner = new LeitorDeDados();
 		double massa = 0, altura = 0, imc = 0;
@@ -68,6 +91,9 @@ public class IMC {
 		} while (continuar);
 	}
 
+	/**
+	 * outras formas de fazer o calculo do imc, pra relembrar como fazia antigamente
+	 */
 	public static void imcPrincipiante() {
 		LeitorDeDados scanner = new LeitorDeDados();
 		double massa = 0, altura = 0, imc = 0;

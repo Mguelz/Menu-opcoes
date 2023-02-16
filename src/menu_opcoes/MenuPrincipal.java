@@ -45,7 +45,7 @@ public class MenuPrincipal {
 			Opcoes.escolherOpcoes();
 			do {
 
-				System.out.println("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ":");
+				System.out.print("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
 				try {
 					opcaoEscolha = scanner.pegarByteDigitado();
 					if (opcaoEscolha >= 0 || opcaoEscolha <= 12) {
