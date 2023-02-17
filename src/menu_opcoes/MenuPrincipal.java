@@ -81,7 +81,6 @@ public class MenuPrincipal {
 				break;
 			case OPCAO_MULTA_AVANCADO:
 				MultaAvancado.multaAvancado();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_NUMERO_SORTE:
 				NumeroSorte.numeroSorte();

@@ -11,14 +11,16 @@ public class MultaSimples {
 	public static void multa() {
 		LeitorDeDados scanner = new LeitorDeDados();
 		byte pontosCNH = 0;
-		boolean continuar = true, repetir = false;
+		boolean continuar = true, continuarTry = false;
 		int opcao;
 
 		do {
+			try {
 			do {
-				System.out.println("\n------------------ MULTA -----------------");
-				System.out.println("Quantos pontos na CNH você recebeu?");
+				System.out.println("\n------------------ MULTA -----------------\n");
+				System.out.print("Quantos pontos na CNH você recebeu: ");
 				pontosCNH = scanner.pegarByteDigitado();
+				
 				if (pontosCNH == 3) {
 					System.out.println("Infração Leve ");
 					System.out.println("R$ 88,38 de multa");
@@ -40,15 +42,21 @@ public class MultaSimples {
 					System.out.println("Digite uma quantidade valida (3,4,5 ou 7)");
 					continuar = true;
 				}
+				
 			} while (continuar);
 
 			System.out.println("\nDeseja calcular outra vez? \n1 - Sim ou  2 - Não");
 			opcao = scanner.pegarNumeroInteiro();
 			if (opcao == 1) {
-				repetir = true;
+				continuarTry = true;
 			} else {
-				repetir = false;
+				continuarTry = false;
 			}
-		} while (repetir);
+			
+			} catch (Exception e) {
+				System.out.println("\nÉ somente permitido números");
+				continuarTry = true;
+			}
+		} while (continuarTry);
 	}
 }

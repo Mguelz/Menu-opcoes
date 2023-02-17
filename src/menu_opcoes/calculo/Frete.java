@@ -3,7 +3,7 @@ package menu_opcoes.calculo;
 import menu_opcoes.LeitorDeDados;
 
 public class Frete {
-	
+
 	/**
 	 * O usuario irá digitar aonde ele mora<br>
 	 * o sistema irá calular a quantidade de desconto ele tem de acordo com o estado
@@ -12,7 +12,7 @@ public class Frete {
 		LeitorDeDados scanner = new LeitorDeDados();
 		boolean continuar = true;
 
-		System.out.println("\n------------------ FRETE -----------------");
+		System.out.println("\n------------------ FRETE -----------------\n");
 		do {
 			System.out.println("Digite sua UF");
 			String uf = scanner.pegarTextoCurto().toUpperCase();
@@ -35,7 +35,7 @@ public class Frete {
 				break;
 			}
 			System.out.println("\nDeseja calcular outro IMC? \n1 - SIM ou 2 - NÃO");
-			uf = scanner.pegarTextoCompleto();
+			uf = scanner.pegarTextoCompleto(); // TODO o programa nao esta parando aqui
 			if (uf.equals(1)) {
 				continuar = true;
 			} else {
