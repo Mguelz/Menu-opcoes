@@ -43,10 +43,10 @@ public class MenuPrincipal {
 
 		do {
 			opcoes.escolherOpcoes();
-			
-			do {	
+
+			do {
 				m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
-				
+
 				try {
 					opcaoEscolha = scanner.pegarByteDigitado();
 					if (opcaoEscolha >= 0 || opcaoEscolha <= 12) {
@@ -58,17 +58,18 @@ public class MenuPrincipal {
 					m.lnPrintaMensagem("É somente permitido números!");
 					scanner.pegarTextoCompleto();
 					continuarTry = true;
-				}
-				catch (NumberFormatException NaoNumero) {
+					m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": "); // TODO fazer uma classe para guardar essas constantes para reuso
+				} catch (NumberFormatException NaoNumero) {
 					m.printaMensagemErroLn("É somente permitido números");
 					continuarTry = true;
 					m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
+				} catch (Exception e) {
+					m.printaMensagemErroLn("error: " + e);
+					continuarTry = true;
+					m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
+					scanner.pegarTextoCompleto();
 				}
-//				 catch (Exception e) {
-//					m.printaMensagemErroLn("error: " + e);
-//					scanner.pegarTextoCompleto();
-//				}
-				
+
 			} while (continuarTry);
 
 			switch (opcaoEscolha) {
