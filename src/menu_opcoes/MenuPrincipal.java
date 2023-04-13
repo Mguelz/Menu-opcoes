@@ -39,13 +39,14 @@ public class MenuPrincipal {
 		Mensagem m = new Mensagem();
 		byte opcaoEscolha = 0;
 		boolean continuar = true;
-		boolean continuarTry = true;
+		boolean continuarTry = false;
 
 		do {
 			opcoes.escolherOpcoes();
-			do {
-
+			
+			do {	
 				m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
+				
 				try {
 					opcaoEscolha = scanner.pegarByteDigitado();
 					if (opcaoEscolha >= 0 || opcaoEscolha <= 12) {
@@ -56,10 +57,18 @@ public class MenuPrincipal {
 				} catch (InputMismatchException erroDeInput) {
 					m.lnPrintaMensagem("É somente permitido números!");
 					scanner.pegarTextoCompleto();
-				} catch (Exception e) {
-					m.printaMensagemErroLn("error: " + e);
-					scanner.pegarTextoCompleto();
+					continuarTry = true;
 				}
+				catch (NumberFormatException NaoNumero) {
+					m.printaMensagemErroLn("É somente permitido números");
+					continuarTry = true;
+					m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
+				}
+//				 catch (Exception e) {
+//					m.printaMensagemErroLn("error: " + e);
+//					scanner.pegarTextoCompleto();
+//				}
+				
 			} while (continuarTry);
 
 			switch (opcaoEscolha) {
