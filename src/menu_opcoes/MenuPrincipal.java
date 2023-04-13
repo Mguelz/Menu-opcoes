@@ -35,29 +35,29 @@ public class MenuPrincipal {
 
 	public static void navegação() {
 		LeitorDeDados scanner = new LeitorDeDados();
-		Opcoes op = new Opcoes();
+		Opcoes opcoes = new Opcoes();
+		Mensagem m = new Mensagem();
 		byte opcaoEscolha = 0;
 		boolean continuar = true;
 		boolean continuarTry = true;
 
 		do {
-//			op.verificarOqueForDigitado(); // consertar este metodo para que funcione fora desta classe
-			Opcoes.escolherOpcoes();
+			opcoes.escolherOpcoes();
 			do {
 
-				System.out.print("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
+				m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
 				try {
 					opcaoEscolha = scanner.pegarByteDigitado();
 					if (opcaoEscolha >= 0 || opcaoEscolha <= 12) {
 						continuarTry = false;
 					} else {
-						System.out.println("Opção inválida, digite novamente.");
+						m.printaMensagemLn("Opção inválida, digite novamente.");
 					}
 				} catch (InputMismatchException erroDeInput) {
-					System.out.println("\nÉ somente permitido números!");
+					m.lnPrintaMensagem("É somente permitido números!");
 					scanner.pegarTextoCompleto();
 				} catch (Exception e) {
-					System.out.println("error: " + e);
+					m.printaMensagemErroLn("error: " + e);
 					scanner.pegarTextoCompleto();
 				}
 			} while (continuarTry);
@@ -65,19 +65,15 @@ public class MenuPrincipal {
 			switch (opcaoEscolha) {
 			case OPCAO_IMC:
 				IMC.imc();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_TABUADA:
 				Tabuada.tabuada();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_DESPESA:
 				Despesa.despesa();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_MULTA:
 				MultaSimples.multa();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_MULTA_AVANCADO:
 				MultaAvancado.multaAvancado();
@@ -87,39 +83,31 @@ public class MenuPrincipal {
 				break;
 			case OPCAO_FRETE:
 				Frete.frete();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_PAR_IMPAR:
 				ParImpar.parImpar();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_JOKENPO:
 				Jokenpo.jokenpo();
 				break;
 			case OPCAO_REGRA3:
 				RegraTres.regraDeTres();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_CONVERTER_FAHRENHEIT:
 				ConversorFahrenheit.ConverterFahrenheit();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_DESCONTO_APLICADO:
 				DescontoAplicado.desontoAplicado();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_GASOLINA_OU_ALCOOL:
 				GasolinaOuAlcool.gasolinaOuAlcool();
-				Opcoes.linhaFinal();
 				break;
 			case OPCAO_SAIR: // SAIR
-				System.out.println("\nPrograma Fechado!");
-				Opcoes.linhaFinal();
+				m.lnPrintaMensagemLn("Programa Fechado!");
 				continuar = false;
 				break;
 			default:
-				System.out.println("Digite uma Opcao Válida:");
-				Opcoes.linhaFinal();
+				m.printaMensagemLn("Digite uma Opcao Válida:");
 				break;
 			}
 		} while (continuar);
