@@ -54,7 +54,6 @@ public class Despesa {
 						} else {
 							m.printaMensagemLn("Você ficou com o saldo positivo neste mês");
 							m.printaMensagemLn("Restou em sua conta R$" + restante);
-//							m.printaMensagemLn("");
 						}
 					}
 				} while (teste < 10);
