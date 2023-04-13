@@ -1,6 +1,7 @@
 package menu_opcoes.calculo;
 
 import menu_opcoes.LeitorDeDados;
+import menu_opcoes.Mensagem;
 
 public class IMC {
 
@@ -12,6 +13,7 @@ public class IMC {
 	 */
 	public static void imc() { // metodo avancado
 		LeitorDeDados scanner = new LeitorDeDados();
+		Mensagem m = new Mensagem();
 		double massa = 0, altura = 0, imc = 0;
 		boolean continuar = false;
 		boolean continuarTry = false;
@@ -19,30 +21,31 @@ public class IMC {
 
 		do {
 			try {
-				System.out.println("\n------------------ IMC -----------------\n");
-				System.out.print("Qual sua massa: ");
+				m.lnPrintaMensagemLn("------------------ IMC -----------------");
+				m.printaMensagemSemPularLinha("Qual sua massa: ");
 				massa = scanner.pegarNumeroQuebrado();
-				System.out.print("Qual sua altura: ");
+				m.printaMensagemSemPularLinha("Qual sua altura: ");
 				altura = scanner.pegarNumeroQuebrado();
 
 				imc = massa / (altura * altura);
-				System.out.print("\nSeu IMC é: " + imc + "\n"); // TODO pode colocar dentro dos if/else para nao
+				m.lnPrintaMensagemSemPularLinha("Seu IMC é: " + imc + "\n"); // TODO pode colocar dentro dos if/else para nao
 																// imprimir junto com o else
+				m.printaMensagemLn("");
 				if (imc < 18.5) {
-					System.out.println("Seu índice é: Magreza");
+					m.printaMensagemLn("Seu índice é: Magreza");
 				} else if (imc >= 18.5 && imc < 24.9) {
-					System.out.println("Seu índice é: Normal");
+					m.printaMensagemLn("Seu índice é: Normal");
 				} else if (imc >= 24.9 && imc < 30) {
-					System.out.println("Seu índice é: Sobrepeso");
+					m.printaMensagemLn("Seu índice é: Sobrepeso");
 				} else if (imc < 50) {
-					System.out.println("Seu índice é: Obesidade");
+					m.printaMensagemLn("Seu índice é: Obesidade");
 				} else {
-					System.out.println("A massa ou altura que você colocou não é um valor válido!");
+					m.printaMensagemLn("A massa ou altura que você colocou não é um valor válido!");
 				}
 
-				System.out.println("\nDeseja calcular outro IMC? \n1 - SIM ou 2 - NÂO");
+				m.printaMensagemLn("\nDeseja calcular outro IMC? \n1 - SIM ou 2 - NÂO");
 				boolean repetir = digitado = scanner.pegarByteDigitado() == VALOR_PARACONTINUAR_NO_SISTEMA;
-				System.out.println("Você escolheu: " + repetir);
+				m.printaMensagemLn("Você escolheu: " + repetir);
 
 				if (digitado == true) {
 					continuarTry = true;
@@ -52,7 +55,7 @@ public class IMC {
 				}
 
 			} catch (Exception e) {
-				System.out.println("É somente permitido números para massa e altura!");
+				m.printaMensagemLn("É somente permitido números para massa e altura!");
 			}
 		} while (continuarTry);
 	}
