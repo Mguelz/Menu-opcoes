@@ -1,6 +1,7 @@
 package menu_opcoes.calculo;
 
 import menu_opcoes.LeitorDeDados;
+import menu_opcoes.Mensagem;
 
 public class Tabuada {
 	static int tabuada = 0, valorFinal, continuar = 1; // static para que os metodos staticos tenham acesso à variavel
@@ -11,24 +12,26 @@ public class Tabuada {
 	 */
 	public static void tabuada() {
 		LeitorDeDados scanner = new LeitorDeDados();
+		Mensagem m = new Mensagem();
 		boolean continuarTry = false;
 		do {
 			try {
 
-				System.out.println("\n------------------ TABUADA -----------------");
-				System.out.print("Qual a tabuada que você deseja: ");
+				m.lnPrintaMensagemLn("------------------ TABUADA -----------------");
+				m.printaMensagemSemPularLinha("Qual a tabuada que você deseja: ");
 				tabuada = scanner.pegarNumeroInteiro();
-				System.out.print("Até que valor deseja calcular? ");
+				m.printaMensagemSemPularLinha("Até que valor deseja calcular? ");
 				valorFinal = scanner.pegarNumeroInteiro();
-				System.out.println("");
+				m.printaMensagemLn("");
 				int valorSecundario = 0;
 				
 				do {
-					System.out.println("   " + tabuada + " x " + valorSecundario + " = " + (tabuada * valorSecundario));
+					m.printaMensagem("   " + tabuada + " x " + valorSecundario + " = " + (tabuada * valorSecundario));
 					valorSecundario++;
 				} while (valorSecundario < (valorFinal + 1));
 
-				System.out.println("\nDeseja consutlar outra tabuada? \n1 - Sim ou 2 - Não");
+				m.lnPrintaMensagemLn("Deseja consutlar outra tabuada?");
+				m.printaMensagemSemPularLinha("1 - Sim ou 2 - Não");
 				tabuada = scanner.pegarNumeroInteiro();
 				if (tabuada == 1) {
 					continuarTry = true;
@@ -37,7 +40,7 @@ public class Tabuada {
 				}
 
 			} catch (Exception e) {
-				System.out.println("\nÉ somente permitido números");
+				m.lnPrintaMensagemLn("É somente permitido números");
 				continuarTry = true;
 			}
 
