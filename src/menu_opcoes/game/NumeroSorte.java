@@ -30,6 +30,8 @@ public class NumeroSorte {
 						continuar = 3;
 					} else {
 						System.out.println("Você Errou, o número certo era: " + sorteio);
+						System.out.println("Suas chances acabaram!");
+						
 					}
 					System.out.println("------------------------------");
 				}
