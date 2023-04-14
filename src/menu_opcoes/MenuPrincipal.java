@@ -59,12 +59,13 @@ public class MenuPrincipal {
 					scanner.pegarTextoCompleto();
 					continuarTry = true;
 					m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": "); // TODO fazer uma classe para guardar essas constantes para reuso
-				} catch (NumberFormatException NaoNumero) {
-					m.printaMensagemErroLn("É somente permitido números");
+				} catch (NumberFormatException digitouLetra) {
+					m.lnPrintaMensagemErro("error: " + digitouLetra);
+					m.printaMensagemErro("É somente permitido números");
 					continuarTry = true;
-					m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
+					m.lnPrintaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
 				} catch (Exception e) {
-					m.printaMensagemErroLn("error: " + e);
+					m.printaMensagemErro("error: " + e);
 					continuarTry = true;
 					m.printaMensagemSemPularLinha("Digite uma opção de " + OPCAO_SAIR + " à " + OPCAO_GASOLINA_OU_ALCOOL + ": ");
 					scanner.pegarTextoCompleto();
