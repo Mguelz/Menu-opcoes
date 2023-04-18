@@ -3,9 +3,10 @@ package menu_opcoes.game;
 import java.util.Random;
 
 import menu_opcoes.LeitorDeDados;
+import menu_opcoes.Mensagem;
 
 public class ParImpar {
-	
+
 	/**
 	 * O usuario ira escolhe par ou impar<br>
 	 * o sistema tambem ira escolher uma opcao<br>
@@ -14,11 +15,12 @@ public class ParImpar {
 	public static void parImpar() {
 		LeitorDeDados scanner = new LeitorDeDados();
 		Random random = new Random();
+		Mensagem m = new Mensagem();
 
 		int digitado = -1, imparPar, sorteio;
 		boolean continuarJogando = false;
 
-		System.out.println("\n------------------ PAR OU ÍMPAR-----------------");
+		m.lnPrintaMensagemLn("------------------ PAR OU ÍMPAR-----------------");
 		do {
 			System.out.println("\nEscolha 0 - (par) ou 1 - (ímpar)");
 			digitado = scanner.pegarNumeroInteiro();
@@ -26,29 +28,30 @@ public class ParImpar {
 			sorteio = random.nextInt(11);
 			imparPar = sorteio % 2;
 			if (digitado == 0) {
-				System.out.println("Você escolheu: par");
-				System.out.println("A máquina escolheu: impar");
-				System.out.println("O numero sorteado foi: " + sorteio + "\n");
+				m.lnPrintaMensagem("Você escolheu: par");
+				m.printaMensagem("A máquina escolheu: impar");
+				m.printaMensagem("O numero sorteado foi:" + sorteio);
 				if (imparPar == 0) {
-					System.out.println("Você Venceu!");
+					m.lnPrintaMensagemLn("Você Venceu!");
 				} else {
-					System.out.println("Você Perdeu!");
+					m.lnPrintaMensagemLn("Você Perdeu!");
 				}
 			} else if (digitado == 1) {
-				System.out.println("Você escolheu: impar");
-				System.out.println("A máquina escolheu: par");
-				System.out.println("O numero sorteado foi: " + sorteio + "\n");
+				m.lnPrintaMensagem("Você escolheu: ímpar");
+				m.printaMensagem("A máquina escolheu: par");
+				m.printaMensagem("O numero sorteado foi:" + sorteio);
 				if (imparPar == 1) {
-					System.out.println("Você Venceu! \n");
+					m.printaMensagemLn("Você Venceu!");
 				} else {
-					System.out.println("Você Perdeu! \n");
+					m.printaMensagemLn("Você Perdeu!");
 				}
 			} else {
-				System.out.println("Digite um opcão válida");
+				m.printaMensagemLn("Digite uma opção válida:");
 				continuarJogando = true;
 			}
 
-			System.out.println("Deseja jogar novamente? \n1 - Sim ou 2 - Não");
+			m.printaMensagem("Deseja jogar novamente?");
+			m.printaMensagemLn("1 - Sim ou 2 - Não");
 			digitado = scanner.pegarNumeroInteiro();
 			if (digitado == 1) {
 				continuarJogando = true;
