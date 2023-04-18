@@ -113,7 +113,7 @@ public class MenuPrincipal {
 			case OPCAO_GASOLINA_OU_ALCOOL:
 				GasolinaOuAlcool.gasolinaOuAlcool();
 				break;
-			case OPCAO_SAIR: // SAIR
+			case OPCAO_SAIR:
 				m.lnPrintaMensagemLn("Programa Fechado!");
 				continuar = false;
 				break;

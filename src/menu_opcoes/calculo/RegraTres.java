@@ -1,10 +1,12 @@
 package menu_opcoes.calculo;
 
 import java.text.DecimalFormat;
+
 import menu_opcoes.LeitorDeDados;
+import menu_opcoes.Mensagem;
 
 public class RegraTres {
-	
+
 	/**
 	 * ira calular por uma regra de tres com os valores que o usuario digitar
 	 */
@@ -12,23 +14,24 @@ public class RegraTres {
 
 		LeitorDeDados scanner = new LeitorDeDados();
 		DecimalFormat formatador = new DecimalFormat("#0.0");
+		Mensagem m = new Mensagem();
 
 		int continuar;
-
-		System.out.println("\n------------------ REGRA DE TRÊS -----------------");
+		m.lnPrintaMensagemLn("------------------ REGRA DE TRÊS -----------------");
 		do {
 			double porcentagem, total, valor;
 			int digitou;
 
-			System.out.print("\nDigite o valor total: ");
+			m.printaMensagemSemPularLinha("Digite o valor total: ");
 			total = scanner.pegarNumeroQuebrado();
-			System.out.print("Digite a porcentagem: ");
+			m.printaMensagemSemPularLinha("Digite a porcentagem: ");
 			porcentagem = scanner.pegarNumeroQuebrado();
 
 			valor = (porcentagem * total) / 100;
-			System.out.println("\n" + porcentagem + "% de " + total + " = " + formatador.format(valor) + " \n");
+			m.lnPrintaMensagemLn(porcentagem + "% d e" + total + " = " + formatador.format(valor));
 
-			System.out.println("Deseja fazer outra conta? \n1 - SIM ou 2 - NÂO");
+			m.printaMensagem("Deseja fazer outra conta?");
+			m.printaMensagem("1 - SIM ou 2 - NÃO");
 			digitou = scanner.pegarNumeroInteiro();
 			if (digitou == 1) {
 				continuar = 1;
