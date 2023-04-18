@@ -1,66 +1,72 @@
 package menu_opcoes.game;
 
 import java.util.Random;
+
 import menu_opcoes.LeitorDeDados;
+import menu_opcoes.Mensagem;
 
 public class Jokenpo {
-	
+
 	/**
 	 * O usuario ira escolher entre pedra, papel ou tesoura<br>
 	 * o sistema tambem ira escolher uma opcao<br>
 	 * no final ira verificar quem ganhou
 	 */
 	public static void jokenpo() {
-		LeitorDeDados scanner  = new LeitorDeDados();
+		LeitorDeDados scanner = new LeitorDeDados();
 		Random random = new Random();
+		Mensagem m = new Mensagem();
+
 		int jogador, computador;
 		boolean continuar = false;
 
-		System.out.println("\n------------------ JOKENPÔ-----------------");
+		m.lnPrintaMensagemLn("------------------ JOKENPÔ-----------------");
 		do {
-			System.out.println("1. Pedra");
-			System.out.println("2. Papel");
-			System.out.println("3. Tesoura");
-			System.out.print("Digite a opção desejada: ");
+			m.printaMensagem("1. Pedra");
+			m.printaMensagem("2. Papel");
+			m.printaMensagemLn("3. Tesoura");
+			m.printaMensagemSemPularLinha("Digite a opção desejada: ");
 			jogador = scanner.pegarNumeroInteiro();
 			switch (jogador) {
 			case 1:
-				System.out.println("\nJogador escolheu Pedra");
+				m.lnPrintaMensagem("Jogador escolheu Pedra");
 				break;
 			case 2:
-				System.out.println("\nJogador escolheu Papel");
+				m.lnPrintaMensagem("Jogador escolheu Papel");
 				break;
 			case 3:
-				System.out.println("\nJogador escolheu Tesoura");
+				m.lnPrintaMensagem("Jogador escolheu Tesoura");
 				break;
 			default:
-				System.out.println("\nOpção Inválida");
+				m.lnPrintaMensagemErroLn("Opção Inválida");
 			}
-			
+
 			computador = random.nextInt(3) + 1;
 			if (computador == 4) {
 				computador = 3;
 			}
 			switch (computador) {
 			case 1:
-				System.out.println("Computador escolheu Pedra");
+				m.printaMensagemLn("Computador escolheu Pedra");
 				break;
 			case 2:
-				System.out.println("Computador escolheu Papel");
+				m.lnPrintaMensagemLn("Computador escolheu Papel");
 				break;
 			case 3:
-				System.out.println("Computador escolheu Tesoura");
+				m.printaMensagemLn("Computaor escolheu Tesoura");
 				break;
 			}
-			
+
 			if (jogador == computador) {
-				System.out.println("\n         EMPATE");
-			} else if ((jogador == 1 && computador == 3) || (jogador == 2 && computador == 1) || (jogador == 3 && computador == 2)) {
-				System.out.println("\n      Você Venceu!");
+				m.lnPrintaMensagemSemPularLinha("         EMPATE");
+			} else if ((jogador == 1 && computador == 3) || (jogador == 2 && computador == 1)
+					|| (jogador == 3 && computador == 2)) {
+				m.lnPrintaMensagemLn("      Você Venceu!");
 			} else {
-				System.out.println("\n      Você Perdeu!");
+				m.lnPrintaMensagemLn("      Você Perdeu!");
 			}
-			System.out.println("Deseja continuar jogando? \n1 - Sim ou 2 - Não");
+			m.printaMensagem("Deseja continuar jogando? ");
+			m.printaMensagemLn("1 - Sim ou 2 - Não");
 			jogador = scanner.pegarNumeroInteiro();
 			if (jogador == 1) {
 				continuar = true;
@@ -69,6 +75,6 @@ public class Jokenpo {
 			}
 		} while (continuar);
 
-		System.out.println("\n_________JoKenPô_________");
+		m.lnPrintaMensagemLn("_________JoKenPô_________");
 	}
 }
