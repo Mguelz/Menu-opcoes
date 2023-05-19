@@ -8,7 +8,7 @@ public class LeitorDeDados {
 	public LeitorDeDados() {
 		scanner = new Scanner(System.in);
 	}
-	
+
 	public byte pegarByteDigitado() {
 		return Byte.parseByte(scanner.nextLine());
 	}
@@ -42,6 +42,15 @@ public class LeitorDeDados {
 
 	public double pegarNumeroQuebrado() {
 		return Double.parseDouble(scanner.nextLine());
+	}
+
+	/**
+	 * Faz a leitura somente da primeira letra digitada, a tornando maiuscula
+	 * 
+	 * @return
+	 */
+	public char pegarPrimeiraLetraMaiuscula() {
+		return scanner.nextLine().toUpperCase().charAt(0);
 	}
 
 	/**

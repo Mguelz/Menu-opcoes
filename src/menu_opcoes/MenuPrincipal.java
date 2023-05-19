@@ -2,7 +2,7 @@ package menu_opcoes;
 
 import java.util.InputMismatchException;
 
-import menu_opcoes.calculo.ConversorFahrenheit;
+import menu_opcoes.calculo.ConversorTemperatura;
 import menu_opcoes.calculo.DescontoAplicado;
 import menu_opcoes.calculo.Despesa;
 import menu_opcoes.calculo.Frete;
@@ -105,7 +105,7 @@ public class MenuPrincipal {
 				RegraTres.regraDeTres();
 				break;
 			case OPCAO_CONVERTER_FAHRENHEIT:
-				ConversorFahrenheit.ConverterFahrenheit();
+				ConversorTemperatura.conversorTemperatura();
 				break;
 			case OPCAO_DESCONTO_APLICADO:
 				DescontoAplicado.desontoAplicado();
