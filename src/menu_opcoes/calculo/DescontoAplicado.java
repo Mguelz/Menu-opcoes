@@ -6,7 +6,7 @@ import menu_opcoes.Mensagem;
 public class DescontoAplicado {
 
 	/**
-	 * de acordo com a quantidade que for gasta o sistema irá calcular o desconto
+	 * de acordo com a quantidade que for gasta o sistema irá calcular o desconto  
 	 */
 	public static void desontoAplicado() {
 		LeitorDeDados scanner = new LeitorDeDados();
