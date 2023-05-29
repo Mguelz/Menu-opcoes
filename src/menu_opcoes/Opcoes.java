@@ -25,7 +25,11 @@ public class Opcoes {
 		m.printaMensagem(" 10 - Regra de 3 ");
 		m.printaMensagem(" 11 - Conversor de Fahrenheit ");
 		m.printaMensagem(" 12 - Desconto Aplicado ");
-		m.printaMensagem(" 13 - Cálculo para Comprar Gasolina ou Álcool");
+		m.printaMensagem(" 13 - Numero Primo ");
+		m.printaMensagem(" 14 - Em Breve ");
+		m.printaMensagem(" 15 - Em Breve ");
+		m.printaMensagem(" 16 - Em Breve ");
+		m.printaMensagem(" 17 - Cálculo para Comprar Gasolina ou Álcool");
 		m.printaMensagemLn(" 0 - Sair ");
 	}
 

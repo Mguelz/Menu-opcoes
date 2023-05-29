@@ -10,6 +10,7 @@ import menu_opcoes.calculo.GasolinaOuAlcool;
 import menu_opcoes.calculo.IMC;
 import menu_opcoes.calculo.MultaAvancado;
 import menu_opcoes.calculo.MultaSimples;
+import menu_opcoes.calculo.NumeroPrimo;
 import menu_opcoes.calculo.RegraTres;
 import menu_opcoes.calculo.Tabuada;
 import menu_opcoes.game.Jokenpo;
@@ -31,7 +32,8 @@ public class MenuPrincipal {
 	public static final byte OPCAO_REGRA3 = 10;
 	public static final byte OPCAO_CONVERTER_FAHRENHEIT = 11;
 	public static final byte OPCAO_DESCONTO_APLICADO = 12;
-	public static final byte OPCAO_GASOLINA_OU_ALCOOL = 13;
+	public static final byte OPCAO_NUMERO_PRIMO = 13;
+	public static final byte OPCAO_GASOLINA_OU_ALCOOL = 17;
 
 	public static void navegação() {
 		LeitorDeDados scanner = new LeitorDeDados();
@@ -109,6 +111,9 @@ public class MenuPrincipal {
 				break;
 			case OPCAO_DESCONTO_APLICADO:
 				DescontoAplicado.desontoAplicado();
+				break;
+			case OPCAO_NUMERO_PRIMO:
+				NumeroPrimo.numeroPrimo();
 				break;
 			case OPCAO_GASOLINA_OU_ALCOOL:
 				GasolinaOuAlcool.gasolinaOuAlcool();
